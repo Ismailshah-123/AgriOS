@@ -1,0 +1,56 @@
+[project]
+name = "agrios-backend"
+version = "0.1.0"
+description = "AgriOS API — modular monolith (FastAPI)"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "fastapi>=0.115,<1",
+    "uvicorn[standard]>=0.32,<1",
+    "pydantic>=2.9,<3",
+    "pydantic-settings>=2.7,<3",
+    "sqlalchemy>=2.0.36,<2.1",
+    "alembic>=1.14,<2",
+    "psycopg[binary]>=3.2,<4",
+    "pwdlib[argon2]>=0.2,<1",
+    "pyjwt>=2.10,<3",
+    "email-validator>=2.2,<3",
+    "pillow>=13.0.0,<14",
+    "python-multipart>=0.0.20,<1",
+    "onnxruntime>=1.20,<2",
+    "numpy>=2,<3",
+    "pypdf>=5,<7",
+    "python-docx>=1.1,<2",
+    "fastembed>=0.4,<1",
+]
+
+[dependency-groups]
+dev = [
+    "httpx2>=2.16,<3",
+    "pytest>=9.0.3,<10",
+    "pytest-cov>=6,<8",
+    "ruff>=0.8,<1",
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q -rs"
+markers = [
+    "db: needs TEST_DATABASE_URL (isolated PostgreSQL test database)",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = ["alembic/versions"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "S", "SIM"]
+ignore = []
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101", "S105", "S106"]  # asserts and fake test-only secrets
+"scripts/**" = ["S603", "S404"]  # dev scripts run local PostgreSQL tools with fixed args

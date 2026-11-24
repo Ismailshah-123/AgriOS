@@ -1,0 +1,6 @@
+python 3.12.10 torch 2.14.1+cu130 torchvision 0.29.1+cu130
+cuda_available True torch_cuda 13.0 cudnn 92400
+device NVIDIA GeForce RTX 3060 vram_bytes 12884377600 sm 8.6 multiprocessors 28
+mem_free_mb 11253 mem_total_mb 12287
+matmul_max_rel_err 9.755669907463016e-07
+fwd_bwd_ok loss 4.351 peak_mem_mb 2982

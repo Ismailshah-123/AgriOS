@@ -1,0 +1,2042 @@
+{
+ "run_at": "2026-11-24T16:02:32+00:00",
+ "question_set": "rag_dev_questions.json",
+ "labelled_by": "AI coding assistant (pending owner review)",
+ "embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+ "thresholds": {
+  "MIN_RANK": 0.05,
+  "DENSE_MIN": 0.5,
+  "DENSE_SOFT": 0.4,
+  "FTS_STRONG": 0.3,
+  "MAX_PASSAGES": 5
+ },
+ "llm_rewrite": false,
+ "fulltext_only": {
+  "summary": {
+   "answerable_n": 27,
+   "unanswerable_n": 6,
+   "hit@5": 0.5556,
+   "recall@5": 0.4321,
+   "precision@5": 0.1852,
+   "mrr": 0.3543,
+   "ndcg@5": 0.4022,
+   "false_abstention_rate": 0,
+   "abstention_accuracy_unanswerable": 0.1667,
+   "retrieval_ms_p50": 8.7,
+   "retrieval_ms_max": 92.3,
+   "by_language": {
+    "en": {
+     "n": 23,
+     "hit@5": 0.5652,
+     "mrr": 0.329
+    },
+    "ur": {
+     "n": 2,
+     "hit@5": 0.5,
+     "mrr": 0.5
+    },
+    "ur-Latn": {
+     "n": 2,
+     "hit@5": 0.5,
+     "mrr": 0.5
+    }
+   }
+  },
+  "rows": [
+   {
+    "id": "q01",
+    "lang": "en",
+    "retrieval_query": "What causes early blight on tomato and what are its symptoms?",
+    "retrieved": [
+     [
+      "Alternaria solani (Wikipedia)",
+      "Alternaria solani"
+     ],
+     [
+      "Phytophthora infestans (Wikipedia)",
+      "Phytophthora infestans"
+     ],
+     [
+      "Corynespora cassiicola (Wikipedia)",
+      "Environment"
+     ],
+     [
+      "Corynespora cassiicola (Wikipedia)",
+      "Hosts"
+     ],
+     [
+      "Alternaria solani (Wikipedia)",
+      "Economic significance"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 0.3333333333333333,
+    "precision": 0.2,
+    "mrr": 1.0,
+    "ndcg": 0.46927872602275644,
+    "abstained": false
+   },
+   {
+    "id": "q02",
+    "lang": "en",
+    "retrieval_query": "How does early blight spread between plants?",
+    "retrieved": [
+     [
+      "Soil pH (Wikipedia)",
+      "Plant pH preferences"
+     ],
+     [
+      "Bacterial leaf spot of peppers and tomato (Wikipedia)",
+      "Management"
+     ],
+     [
+      "Bacterial leaf spot of peppers and tomato (Wikipedia)",
+      "Disease cycle"
+     ],
+     [
+      "Phytophthora infestans (Wikipedia)",
+      "Resistant plants"
+     ],
+     [
+      "Soil pH (Wikipedia)",
+      "Plant pH preferences"
+     ]
+    ],
+    "hit": 0.0,
+    "recall": 0.0,
+    "precision": 0.0,
+    "mrr": 0.0,
+    "ndcg": 0.0,
+    "abstained": false
+   },
+   {
+    "id": "q03",
+    "lang": "en",
+    "retrieval_query": "Which cultural practices help control early blight?",
+    "retrieved": [
+     [
+      "Integrated Pest Management (IPM) Principles",
+      "How do IPM programs work?"
+     ],
+     [
+      "Integrated pest management (Wikipedia)",
+      "Agricultural pest management"
+     ],
+     [
+      "Integrated pest management (Wikipedia)",
+      "United States (History)"
+     ],
+     [
+      "Integrated pest management (Wikipedia)",
+      "United States (History)"
+     ],
+     [
+      "Integrated pest management (Wikipedia)",
+      "United States (History)"
+     ]
+    ],
+    "hit": 0.0,
+    "recall": 0.0,
+    "precision": 0.0,
+    "mrr": 0.0,
+    "ndcg": 0.0,
+    "abstained": false
+   },
+   {
+    "id": "q04",
+    "lang": "en",
+    "retrieval_query": "What weather conditions favour late blight?",
+    "retrieved": [
+     [
+      "Phytophthora infestans (Wikipedia)",
+      "Historical impact"
+     ],
+     [
+      "Phytophthora infestans (Wikipedia)",
+      "Phytophthora infestans"
+     ],
+     [
+      "Phytophthora infestans (Wikipedia)",
+      "Resistant plants"
+     ],
+     [
+      "Phytophthora infestans (Wikipedia)",
+      "Environmental conditions"
+     ],
+     [
+      "Phytophthora infestans (Wikipedia)",
+      "Life cycle, signs and symptoms"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 1.0,
+    "precision": 0.4,
+    "mrr": 0.25,
+    "ndcg": 0.5012658353418871,
+    "abstained": false
+   },
+   {
+    "id": "q05",
+    "lang": "en",
+    "retrieval_query": "How can farmers reduce late blight inoculum?",
+    "retrieved": [
+     [
+      "Phytophthora infestans (Wikipedia)",
+      "Historical impact"
+     ],
+     [
+      "Phytophthora infestans (Wikipedia)",
+      "Resistant plants"
+     ],
+     [
+      "Phytophthora infestans (Wikipedia)",
+      "Phytophthora infestans"
+     ],
+     [
+      "Crop rotation (Wikipedia)",
+      "Reducing soil erosion"
+     ],
+     [
+      "Integrated pest management (Wikipedia)",
+      "Southeast Asia"
+     ]
+    ],
+    "hit": 0.0,
+    "recall": 0.0,
+    "precision": 0.0,
+    "mrr": 0.0,
+    "ndcg": 0.0,
+    "abstained": false
+   },
+   {
+    "id": "q06",
+    "lang": "en",
+    "retrieval_query": "What are the symptoms of septoria leaf spot on tomato?",
+    "retrieved": [
+     [
+      "Corynespora cassiicola (Wikipedia)",
+      "Environment"
+     ],
+     [
+      "Alternaria solani (Wikipedia)",
+      "On tomatoes"
+     ],
+     [
+      "Bacterial leaf spot of peppers and tomato (Wikipedia)",
+      "Bacterial leaf spot of peppers and tomato"
+     ],
+     [
+      "Corynespora cassiicola (Wikipedia)",
+      "Hosts"
+     ],
+     [
+      "Alternaria solani (Wikipedia)",
+      "Alternaria solani"
+     ]
+    ],
+    "hit": 0.0,
+    "recall": 0.0,
+    "precision": 0.0,
+    "mrr": 0.0,
+    "ndcg": 0.0,
+    "abstained": false
+   },
+   {
+    "id": "q07",
+    "lang": "en",
+    "retrieval_query": "How is bacterial spot of tomato managed?",
+    "retrieved": [
+     [
+      "Bacterial leaf spot of peppers and tomato (Wikipedia)",
+      "Bacterial leaf spot of peppers and tomato"
+     ],
+     [
+      "Bacterial leaf spot of peppers and tomato (Wikipedia)",
+      "Management"
+     ],
+     [
+      "Bacterial leaf spot of peppers and tomato (Wikipedia)",
+      "Management"
+     ],
+     [
+      "Corynespora cassiicola (Wikipedia)",
+      "Management"
+     ],
+     [
+      "Bacterial leaf spot of peppers and tomato (Wikipedia)",
+      "Leaves and stems"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 1.0,
+    "precision": 0.4,
+    "mrr": 0.5,
+    "ndcg": 1.1309297535714575,
+    "abstained": false
+   },
+   {
+    "id": "q08",
+    "lang": "en",
+    "retrieval_query": "How is tomato yellow leaf curl virus transmitted?",
+    "retrieved": [
+     [
+      "Tomato yellow leaf curl virus (Wikipedia)",
+      "Tomato yellow leaf curl virus"
+     ],
+     [
+      "Tomato yellow leaf curl virus (Wikipedia)",
+      "Epidemiology"
+     ],
+     [
+      "Tomato yellow leaf curl virus (Wikipedia)",
+      "Transmission"
+     ],
+     [
+      "Alternaria solani (Wikipedia)",
+      "Alternaria solani"
+     ],
+     [
+      "Alternaria solani (Wikipedia)",
+      "On tomatoes"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 1.0,
+    "precision": 0.6,
+    "mrr": 1.0,
+    "ndcg": 1.0,
+    "abstained": false
+   },
+   {
+    "id": "q09",
+    "lang": "en",
+    "retrieval_query": "What symptoms does tomato mosaic virus cause on leaves?",
+    "retrieved": [
+     [
+      "Alternaria solani (Wikipedia)",
+      "Alternaria solani"
+     ],
+     [
+      "Corynespora cassiicola (Wikipedia)",
+      "Environment"
+     ],
+     [
+      "Tomato yellow leaf curl virus (Wikipedia)",
+      "Tomato yellow leaf curl virus"
+     ],
+     [
+      "Tomato yellow leaf curl virus (Wikipedia)",
+      "Epidemiology"
+     ],
+     [
+      "Alternaria solani (Wikipedia)",
+      "On tomatoes"
+     ]
+    ],
+    "hit": 0.0,
+    "recall": 0.0,
+    "precision": 0.0,
+    "mrr": 0.0,
+    "ndcg": 0.0,
+    "abstained": false
+   },
+   {
+    "id": "q10",
+    "lang": "en",
+    "retrieval_query": "How does tomato mosaic virus infect plants?",
+    "retrieved": [
+     [
+      "Bacterial leaf spot of peppers and tomato (Wikipedia)",
+      "Disease cycle"
+     ],
+     [
+      "Tomato yellow leaf curl virus (Wikipedia)",
+      "Tomato yellow leaf curl virus"
+     ],
+     [
+      "Soil pH (Wikipedia)",
+      "Plant pH preferences"
+     ],
+     [
+      "Bacterial leaf spot of peppers and tomato (Wikipedia)",
+      "Management"
+     ],
+     [
+      "Alternaria solani (Wikipedia)",
+      "Disease cycle"
+     ]
+    ],
+    "hit": 0.0,
+    "recall": 0.0,
+    "precision": 0.0,
+    "mrr": 0.0,
+    "ndcg": 0.0,
+    "abstained": false
+   },
+   {
+    "id": "q11",
+    "lang": "en",
+    "retrieval_query": "Describe the life cycle of the two-spotted spider mite.",
+    "retrieved": [
+     [
+      "Tetranychus urticae (Wikipedia)",
+      "Tetranychus urticae"
+     ],
+     [
+      "Tetranychus urticae (Wikipedia)",
+      "Ecology"
+     ],
+     [
+      "Phytophthora infestans (Wikipedia)",
+      "Life cycle, signs and symptoms"
+     ],
+     [
+      "Alternaria solani (Wikipedia)",
+      "Disease cycle"
+     ],
+     [
+      "Crop rotation (Wikipedia)",
+      "Two-field systems"
+     ]
+    ],
+    "hit": 0.0,
+    "recall": 0.0,
+    "precision": 0.0,
+    "mrr": 0.0,
+    "ndcg": 0.0,
+    "abstained": false
+   },
+   {
+    "id": "q12",
+    "lang": "en",
+    "retrieval_query": "How can cotton bollworm (Helicoverpa armigera) be monitored and controlled?",
+    "retrieved": [
+     [
+      "Integrated Pest Management (IPM) Principles",
+      "How do IPM programs work?"
+     ],
+     [
+      "Integrated pest management (Wikipedia)",
+      "United States (History)"
+     ],
+     [
+      "Integrated pest management (Wikipedia)",
+      "United States (History)"
+     ],
+     [
+      "Integrated Pest Management (IPM) Principles",
+      "How do IPM programs work?"
+     ],
+     [
+      "Helicoverpa armigera (Wikipedia)",
+      "Helicoverpa armigera"
+     ]
+    ],
+    "hit": 0.0,
+    "recall": 0.0,
+    "precision": 0.0,
+    "mrr": 0.0,
+    "ndcg": 0.0,
+    "abstained": false
+   },
+   {
+    "id": "q13",
+    "lang": "en",
+    "retrieval_query": "What are the steps of integrated pest management?",
+    "retrieved": [
+     [
+      "Integrated pest management (Wikipedia)",
+      "Integrated pest management"
+     ],
+     [
+      "Integrated pest management (Wikipedia)",
+      "Books"
+     ],
+     [
+      "Integrated pest management (Wikipedia)",
+      "Residential pest management"
+     ],
+     [
+      "Integrated pest management (Wikipedia)",
+      "Agricultural pest management"
+     ],
+     [
+      "Integrated Pest Management (IPM) Principles",
+      "How do IPM programs work?"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 0.3333333333333333,
+    "precision": 0.2,
+    "mrr": 0.2,
+    "ndcg": 0.18154179253735267,
+    "abstained": false
+   },
+   {
+    "id": "q14",
+    "lang": "en",
+    "retrieval_query": "What is an action threshold in IPM?",
+    "retrieved": [
+     [
+      "Integrated pest management (Wikipedia)",
+      "Agricultural pest management"
+     ],
+     [
+      "Integrated Pest Management (IPM) Principles",
+      "How do IPM programs work?"
+     ],
+     [
+      "Integrated Pest Management (IPM) Principles",
+      "How do IPM programs work?"
+     ],
+     [
+      "Integrated pest management (Wikipedia)",
+      "Monitoring"
+     ],
+     [
+      "Integrated pest management (Wikipedia)",
+      "Agricultural pest management"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 0.6666666666666666,
+    "precision": 0.6,
+    "mrr": 0.5,
+    "ndcg": 0.7328286204777911,
+    "abstained": false
+   },
+   {
+    "id": "q15",
+    "lang": "en",
+    "retrieval_query": "How does irrigation cause soil salinity?",
+    "retrieved": [
+     [
+      "Soil salinity (Wikipedia)",
+      "Consequences of soil salinity"
+     ],
+     [
+      "Surface irrigation (Wikipedia)",
+      "Issues associated with surface irrigation"
+     ],
+     [
+      "Soil pH (Wikipedia)",
+      "pH effects on soil biota"
+     ],
+     [
+      "Soil pH (Wikipedia)",
+      "Increasing pH of acidic soil"
+     ],
+     [
+      "Soil salinity (Wikipedia)",
+      "Natural occurrence"
+     ]
+    ],
+    "hit": 0.0,
+    "recall": 0.0,
+    "precision": 0.0,
+    "mrr": 0.0,
+    "ndcg": 0.0,
+    "abstained": false
+   },
+   {
+    "id": "q16",
+    "lang": "en",
+    "retrieval_query": "What are the effects of salinity on crops?",
+    "retrieved": [
+     [
+      "Soil salinity (Wikipedia)",
+      "Salt tolerance of crops"
+     ],
+     [
+      "Crop rotation (Wikipedia)",
+      "Weed management"
+     ],
+     [
+      "Crop rotation (Wikipedia)",
+      "Planning a rotation"
+     ],
+     [
+      "Soil salinity (Wikipedia)",
+      "Consequences of soil salinity"
+     ],
+     [
+      "Crop rotation (Wikipedia)",
+      "Crop choice"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 1.0,
+    "precision": 0.4,
+    "mrr": 1.0,
+    "ndcg": 0.8772153153380493,
+    "abstained": false
+   },
+   {
+    "id": "q17",
+    "lang": "en",
+    "retrieval_query": "How can the pH of an acidic soil be increased?",
+    "retrieved": [
+     [
+      "Soil pH (Wikipedia)",
+      "pH effects on soil biota"
+     ],
+     [
+      "Soil pH (Wikipedia)",
+      "Soil pH"
+     ],
+     [
+      "Soil pH (Wikipedia)",
+      "Increasing pH of acidic soil"
+     ],
+     [
+      "Soil pH (Wikipedia)",
+      "Plant pH preferences"
+     ],
+     [
+      "Soil pH (Wikipedia)",
+      "pH effects on soil biota"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 1.0,
+    "precision": 0.2,
+    "mrr": 0.3333333333333333,
+    "ndcg": 0.5,
+    "abstained": false
+   },
+   {
+    "id": "q18",
+    "lang": "en",
+    "retrieval_query": "How does soil pH affect nutrient availability?",
+    "retrieved": [
+     [
+      "Soil pH (Wikipedia)",
+      "Soil pH"
+     ],
+     [
+      "Soil pH (Wikipedia)",
+      "pH effects on soil biota"
+     ],
+     [
+      "Soil pH (Wikipedia)",
+      "Nutrient availability in relation to soil pH"
+     ],
+     [
+      "Soil pH (Wikipedia)",
+      "Plant pH preferences"
+     ],
+     [
+      "Crop rotation (Wikipedia)",
+      "Soil organic matter"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 1.0,
+    "precision": 0.2,
+    "mrr": 0.3333333333333333,
+    "ndcg": 0.5,
+    "abstained": false
+   },
+   {
+    "id": "q19",
+    "lang": "en",
+    "retrieval_query": "What are the advantages and disadvantages of drip irrigation?",
+    "retrieved": [
+     [
+      "Drip irrigation (Wikipedia)",
+      "Advantages and disadvantages"
+     ],
+     [
+      "Drip irrigation (Wikipedia)",
+      "Drip irrigation"
+     ],
+     [
+      "Drip irrigation (Wikipedia)",
+      "Advantages and disadvantages"
+     ],
+     [
+      "Drip irrigation (Wikipedia)",
+      "Components and operation"
+     ],
+     [
+      "Drip irrigation (Wikipedia)",
+      "Plastic emitter, trickle irrigation"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 1.0,
+    "precision": 0.4,
+    "mrr": 1.0,
+    "ndcg": 1.5,
+    "abstained": false
+   },
+   {
+    "id": "q20",
+    "lang": "en",
+    "retrieval_query": "What is furrow irrigation?",
+    "retrieved": [
+     [
+      "Surface irrigation (Wikipedia)",
+      "Furrow irrigation"
+     ],
+     [
+      "Drip irrigation (Wikipedia)",
+      "Drip irrigation"
+     ],
+     [
+      "Surface irrigation (Wikipedia)",
+      "Surge irrigation"
+     ],
+     [
+      "Surface irrigation (Wikipedia)",
+      "Furrow irrigation"
+     ],
+     [
+      "Drip irrigation (Wikipedia)",
+      "Advantages and disadvantages"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 1.0,
+    "precision": 0.4,
+    "mrr": 1.0,
+    "ndcg": 1.4306765580733931,
+    "abstained": false
+   },
+   {
+    "id": "q21",
+    "lang": "en",
+    "retrieval_query": "Which factors control evapotranspiration?",
+    "retrieved": [
+     [
+      "Integrated pest management (Wikipedia)",
+      "United States (History)"
+     ],
+     [
+      "Integrated Pest Management (IPM) Principles",
+      "How do IPM programs work?"
+     ],
+     [
+      "Integrated pest management (Wikipedia)",
+      "United States (History)"
+     ],
+     [
+      "Evapotranspiration (Wikipedia)",
+      "Primary factors"
+     ],
+     [
+      "Evapotranspiration (Wikipedia)",
+      "Soil and irrigation"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 0.6666666666666666,
+    "precision": 0.4,
+    "mrr": 0.25,
+    "ndcg": 0.38364913903790027,
+    "abstained": false
+   },
+   {
+    "id": "q22",
+    "lang": "en",
+    "retrieval_query": "How does crop rotation help control pests and diseases?",
+    "retrieved": [
+     [
+      "Integrated Pest Management (IPM) Principles",
+      "How do IPM programs work?"
+     ],
+     [
+      "Crop rotation (Wikipedia)",
+      "Organic farming"
+     ],
+     [
+      "Crop rotation (Wikipedia)",
+      "Crop choice"
+     ],
+     [
+      "Crop rotation (Wikipedia)",
+      "Planning a rotation"
+     ],
+     [
+      "Crop rotation (Wikipedia)",
+      "Reducing soil erosion"
+     ]
+    ],
+    "hit": 0.0,
+    "recall": 0.0,
+    "precision": 0.0,
+    "mrr": 0.0,
+    "ndcg": 0.0,
+    "abstained": false
+   },
+   {
+    "id": "q23",
+    "lang": "en",
+    "retrieval_query": "How is wheat leaf rust controlled?",
+    "retrieved": [
+     [
+      "Wheat leaf rust (Wikipedia)",
+      "Nomenclatural history"
+     ],
+     [
+      "Wheat leaf rust (Wikipedia)",
+      "Nomenclatural history"
+     ],
+     [
+      "Wheat leaf rust (Wikipedia)",
+      "Wheat leaf rust"
+     ],
+     [
+      "Integrated Pest Management (IPM) Principles",
+      "How do IPM programs work?"
+     ],
+     [
+      "Wheat leaf rust (Wikipedia)",
+      "Host resistance"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 0.3333333333333333,
+    "precision": 0.2,
+    "mrr": 0.2,
+    "ndcg": 0.18154179253735267,
+    "abstained": false
+   },
+   {
+    "id": "q24",
+    "lang": "ur",
+    "retrieval_query": "ٹماٹر کے پتوں پر اگیتی جھلسا (ارلی بلائٹ) کی علامات کیا ہیں؟ tomato leaves blight",
+    "retrieved": [
+     [
+      "Alternaria solani (Wikipedia)",
+      "Alternaria solani"
+     ],
+     [
+      "Phytophthora infestans (Wikipedia)",
+      "Resistant plants"
+     ],
+     [
+      "Phytophthora infestans (Wikipedia)",
+      "Phytophthora infestans"
+     ],
+     [
+      "Bacterial leaf spot of peppers and tomato (Wikipedia)",
+      "Leaves and stems"
+     ],
+     [
+      "Phytophthora infestans (Wikipedia)",
+      "Historical impact"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 0.3333333333333333,
+    "precision": 0.2,
+    "mrr": 1.0,
+    "ndcg": 0.46927872602275644,
+    "abstained": false
+   },
+   {
+    "id": "q25",
+    "lang": "ur",
+    "retrieval_query": "زمین میں نمکیات (کلر) آبپاشی سے کیسے بڑھتے ہیں؟ soil land salinity saline soil irrigation",
+    "retrieved": [
+     [
+      "Soil salinity (Wikipedia)",
+      "Consequences of soil salinity"
+     ],
+     [
+      "Soil pH (Wikipedia)",
+      "pH effects on soil biota"
+     ],
+     [
+      "Surface irrigation (Wikipedia)",
+      "Issues associated with surface irrigation"
+     ],
+     [
+      "Soil salinity (Wikipedia)",
+      "Salt tolerance of crops"
+     ],
+     [
+      "Soil pH (Wikipedia)",
+      "Increasing pH of acidic soil"
+     ]
+    ],
+    "hit": 0.0,
+    "recall": 0.0,
+    "precision": 0.0,
+    "mrr": 0.0,
+    "ndcg": 0.0,
+    "abstained": false
+   },
+   {
+    "id": "q26",
+    "lang": "ur-Latn",
+    "retrieval_query": "drip abpashi ke fayde aur nuqsanat kya hain irrigation",
+    "retrieved": [
+     [
+      "Drip irrigation (Wikipedia)",
+      "Advantages and disadvantages"
+     ],
+     [
+      "Drip irrigation (Wikipedia)",
+      "Drip irrigation"
+     ],
+     [
+      "Drip irrigation (Wikipedia)",
+      "Components and operation"
+     ],
+     [
+      "Drip irrigation (Wikipedia)",
+      "Plastic emitter, trickle irrigation"
+     ],
+     [
+      "Drip irrigation (Wikipedia)",
+      "Plastic emitter, trickle irrigation"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 1.0,
+    "precision": 0.2,
+    "mrr": 1.0,
+    "ndcg": 1.0,
+    "abstained": false
+   },
+   {
+    "id": "q27",
+    "lang": "ur-Latn",
+    "retrieval_query": "gandum ki fasal mein rust bimari ko kaise control karein wheat crop disease",
+    "retrieved": [
+     [
+      "Crop rotation (Wikipedia)",
+      "Weed management"
+     ],
+     [
+      "Integrated Pest Management (IPM) Principles",
+      "How do IPM programs work?"
+     ],
+     [
+      "Crop rotation (Wikipedia)",
+      "Crop choice"
+     ],
+     [
+      "Wheat leaf rust (Wikipedia)",
+      "Nomenclatural history"
+     ],
+     [
+      "Wheat leaf rust (Wikipedia)",
+      "Nomenclatural history"
+     ]
+    ],
+    "hit": 0.0,
+    "recall": 0.0,
+    "precision": 0.0,
+    "mrr": 0.0,
+    "ndcg": 0.0,
+    "abstained": false
+   },
+   {
+    "id": "n01",
+    "lang": "en",
+    "retrieval_query": "What is the current export price of Pakistani mangoes?",
+    "retrieved": [
+     [
+      "Bacterial leaf spot of peppers and tomato (Wikipedia)",
+      "Management"
+     ],
+     [
+      "Bacterial leaf spot of peppers and tomato (Wikipedia)",
+      "Management"
+     ],
+     [
+      "Integrated pest management (Wikipedia)",
+      "Southeast Asia"
+     ],
+     [
+      "Drip irrigation (Wikipedia)",
+      "Current developments"
+     ],
+     [
+      "Wheat leaf rust (Wikipedia)",
+      "Nomenclatural history"
+     ]
+    ],
+    "correct_abstention": false
+   },
+   {
+    "id": "n02",
+    "lang": "en",
+    "retrieval_query": "How much milk does a Sahiwal cow produce per day?",
+    "retrieved": [
+     [
+      "Helicoverpa armigera (Wikipedia)",
+      "Economic significance"
+     ],
+     [
+      "Integrated pest management (Wikipedia)",
+      "Southeast Asia"
+     ],
+     [
+      "Phytophthora infestans (Wikipedia)",
+      "In organic production"
+     ],
+     [
+      "Integrated pest management (Wikipedia)",
+      "Monitoring"
+     ],
+     [
+      "Helicoverpa armigera (Wikipedia)",
+      "Lifecycle"
+     ]
+    ],
+    "correct_abstention": false
+   },
+   {
+    "id": "n03",
+    "lang": "en",
+    "retrieval_query": "Which bank gives the cheapest tractor loan in Punjab?",
+    "retrieved": [
+     [
+      "Surface irrigation (Wikipedia)",
+      "Spate irrigation"
+     ],
+     [
+      "Integrated pest management (Wikipedia)",
+      "Southeast Asia"
+     ],
+     [
+      "Soil pH (Wikipedia)",
+      "Plant pH preferences"
+     ],
+     [
+      "Soil pH (Wikipedia)",
+      "Plant pH preferences"
+     ],
+     [
+      "Surface irrigation (Wikipedia)",
+      "Basin irrigation"
+     ]
+    ],
+    "correct_abstention": false
+   },
+   {
+    "id": "n04",
+    "lang": "en",
+    "retrieval_query": "When should rice be transplanted in Sindh?",
+    "retrieved": [
+     [
+      "Integrated pest management (Wikipedia)",
+      "Southeast Asia"
+     ],
+     [
+      "Integrated pest management (Wikipedia)",
+      "Southeast Asia"
+     ],
+     [
+      "Drip irrigation (Wikipedia)",
+      "Plastic emitter, trickle irrigation"
+     ],
+     [
+      "Integrated pest management (Wikipedia)",
+      "Papers"
+     ],
+     [
+      "Integrated pest management (Wikipedia)",
+      "Southeast Asia"
+     ]
+    ],
+    "correct_abstention": false
+   },
+   {
+    "id": "n05",
+    "lang": "en",
+    "retrieval_query": "What is the government support price of sugarcane this year?",
+    "retrieved": [
+     [
+      "Integrated pest management (Wikipedia)",
+      "Southeast Asia"
+     ],
+     [
+      "Alternaria solani (Wikipedia)",
+      "Cultural control"
+     ],
+     [
+      "Crop rotation (Wikipedia)",
+      "Challenges"
+     ],
+     [
+      "Evapotranspiration (Wikipedia)",
+      "Estimation from meteorological data"
+     ],
+     [
+      "Crop rotation (Wikipedia)",
+      "Two-field systems"
+     ]
+    ],
+    "correct_abstention": false
+   },
+   {
+    "id": "n06",
+    "lang": "ur",
+    "retrieval_query": "مرغیوں کو کون سی ویکسین کب لگانی چاہیے؟",
+    "retrieved": [],
+    "correct_abstention": true
+   }
+  ]
+ },
+ "hybrid": {
+  "summary": {
+   "answerable_n": 27,
+   "unanswerable_n": 6,
+   "hit@5": 0.6296,
+   "recall@5": 0.463,
+   "precision@5": 0.2543,
+   "mrr": 0.4938,
+   "ndcg@5": 0.561,
+   "false_abstention_rate": 0,
+   "abstention_accuracy_unanswerable": 0.8333,
+   "retrieval_ms_p50": 49.7,
+   "retrieval_ms_max": 111.2,
+   "by_language": {
+    "en": {
+     "n": 23,
+     "hit@5": 0.6087,
+     "mrr": 0.5036
+    },
+    "ur": {
+     "n": 2,
+     "hit@5": 1.0,
+     "mrr": 0.625
+    },
+    "ur-Latn": {
+     "n": 2,
+     "hit@5": 0.5,
+     "mrr": 0.25
+    }
+   }
+  },
+  "rows": [
+   {
+    "id": "q01",
+    "lang": "en",
+    "retrieval_query": "What causes early blight on tomato and what are its symptoms?",
+    "retrieved": [
+     [
+      "Alternaria solani (Wikipedia)",
+      "Alternaria solani"
+     ],
+     [
+      "Alternaria solani (Wikipedia)",
+      "Economic significance"
+     ],
+     [
+      "Phytophthora infestans (Wikipedia)",
+      "Phytophthora infestans"
+     ],
+     [
+      "Bacterial leaf spot of peppers and tomato (Wikipedia)",
+      "Bacterial leaf spot of peppers and tomato"
+     ],
+     [
+      "Alternaria solani (Wikipedia)",
+      "On tomatoes"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 0.6666666666666666,
+    "precision": 0.4,
+    "mrr": 1.0,
+    "ndcg": 0.6508205185601091,
+    "abstained": false
+   },
+   {
+    "id": "q02",
+    "lang": "en",
+    "retrieval_query": "How does early blight spread between plants?",
+    "retrieved": [
+     [
+      "Phytophthora infestans (Wikipedia)",
+      "Life cycle, signs and symptoms"
+     ],
+     [
+      "Alternaria solani (Wikipedia)",
+      "Alternaria solani"
+     ],
+     [
+      "Phytophthora infestans (Wikipedia)",
+      "Phytophthora infestans"
+     ],
+     [
+      "Phytophthora infestans (Wikipedia)",
+      "Historical impact"
+     ],
+     [
+      "Phytophthora infestans (Wikipedia)",
+      "Resistant plants"
+     ]
+    ],
+    "hit": 0.0,
+    "recall": 0.0,
+    "precision": 0.0,
+    "mrr": 0.0,
+    "ndcg": 0.0,
+    "abstained": false
+   },
+   {
+    "id": "q03",
+    "lang": "en",
+    "retrieval_query": "Which cultural practices help control early blight?",
+    "retrieved": [
+     [
+      "Integrated pest management (Wikipedia)",
+      "Prevention"
+     ],
+     [
+      "Alternaria solani (Wikipedia)",
+      "Economic significance"
+     ],
+     [
+      "Alternaria solani (Wikipedia)",
+      "Historical impact"
+     ]
+    ],
+    "hit": 0.0,
+    "recall": 0.0,
+    "precision": 0.0,
+    "mrr": 0.0,
+    "ndcg": 0.0,
+    "abstained": false
+   },
+   {
+    "id": "q04",
+    "lang": "en",
+    "retrieval_query": "What weather conditions favour late blight?",
+    "retrieved": [
+     [
+      "Phytophthora infestans (Wikipedia)",
+      "Environmental conditions"
+     ],
+     [
+      "Alternaria solani (Wikipedia)",
+      "Historical impact"
+     ],
+     [
+      "Phytophthora infestans (Wikipedia)",
+      "Environmental conditions"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 0.5,
+    "precision": 0.6666666666666666,
+    "mrr": 1.0,
+    "ndcg": 0.9197207891481876,
+    "abstained": false
+   },
+   {
+    "id": "q05",
+    "lang": "en",
+    "retrieval_query": "How can farmers reduce late blight inoculum?",
+    "retrieved": [
+     [
+      "Phytophthora infestans (Wikipedia)",
+      "Phytophthora infestans"
+     ],
+     [
+      "Phytophthora infestans (Wikipedia)",
+      "Reducing inoculum"
+     ],
+     [
+      "Phytophthora infestans (Wikipedia)",
+      "Control of tuber blight"
+     ],
+     [
+      "Phytophthora infestans (Wikipedia)",
+      "Resistant plants"
+     ],
+     [
+      "Phytophthora infestans (Wikipedia)",
+      "Historical impact"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 0.5,
+    "precision": 0.2,
+    "mrr": 0.5,
+    "ndcg": 0.38685280723454163,
+    "abstained": false
+   },
+   {
+    "id": "q06",
+    "lang": "en",
+    "retrieval_query": "What are the symptoms of septoria leaf spot on tomato?",
+    "retrieved": [
+     [
+      "Alternaria solani (Wikipedia)",
+      "On tomatoes"
+     ],
+     [
+      "Bacterial leaf spot of peppers and tomato (Wikipedia)",
+      "Bacterial leaf spot of peppers and tomato"
+     ],
+     [
+      "Corynespora cassiicola (Wikipedia)",
+      "Environment"
+     ],
+     [
+      "Wheat leaf rust (Wikipedia)",
+      "Symptoms"
+     ],
+     [
+      "Alternaria solani (Wikipedia)",
+      "Hosts and symptoms"
+     ]
+    ],
+    "hit": 0.0,
+    "recall": 0.0,
+    "precision": 0.0,
+    "mrr": 0.0,
+    "ndcg": 0.0,
+    "abstained": false
+   },
+   {
+    "id": "q07",
+    "lang": "en",
+    "retrieval_query": "How is bacterial spot of tomato managed?",
+    "retrieved": [
+     [
+      "Bacterial leaf spot of peppers and tomato (Wikipedia)",
+      "Bacterial leaf spot of peppers and tomato"
+     ],
+     [
+      "Bacterial leaf spot of peppers and tomato (Wikipedia)",
+      "Management"
+     ],
+     [
+      "Bacterial leaf spot of peppers and tomato (Wikipedia)",
+      "Management"
+     ],
+     [
+      "Corynespora cassiicola (Wikipedia)",
+      "Management"
+     ],
+     [
+      "Bacterial leaf spot of peppers and tomato (Wikipedia)",
+      "Leaves and stems"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 1.0,
+    "precision": 0.4,
+    "mrr": 0.5,
+    "ndcg": 1.1309297535714575,
+    "abstained": false
+   },
+   {
+    "id": "q08",
+    "lang": "en",
+    "retrieval_query": "How is tomato yellow leaf curl virus transmitted?",
+    "retrieved": [
+     [
+      "Tomato yellow leaf curl virus (Wikipedia)",
+      "Tomato yellow leaf curl virus"
+     ],
+     [
+      "Tomato yellow leaf curl virus (Wikipedia)",
+      "Epidemiology"
+     ],
+     [
+      "Tomato mosaic virus (Wikipedia)",
+      "Tomato mosaic virus"
+     ],
+     [
+      "Alternaria solani (Wikipedia)",
+      "On tomatoes"
+     ],
+     [
+      "Alternaria solani (Wikipedia)",
+      "Alternaria solani"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 0.6666666666666666,
+    "precision": 0.4,
+    "mrr": 1.0,
+    "ndcg": 0.7653606369886217,
+    "abstained": false
+   },
+   {
+    "id": "q09",
+    "lang": "en",
+    "retrieval_query": "What symptoms does tomato mosaic virus cause on leaves?",
+    "retrieved": [
+     [
+      "Alternaria solani (Wikipedia)",
+      "On tomatoes"
+     ],
+     [
+      "Corynespora cassiicola (Wikipedia)",
+      "Environment"
+     ],
+     [
+      "Tomato yellow leaf curl virus (Wikipedia)",
+      "Tomato yellow leaf curl virus"
+     ],
+     [
+      "Tomato yellow leaf curl virus (Wikipedia)",
+      "Agricultural importance"
+     ],
+     [
+      "Tomato mosaic virus (Wikipedia)",
+      "Tomato mosaic virus"
+     ]
+    ],
+    "hit": 0.0,
+    "recall": 0.0,
+    "precision": 0.0,
+    "mrr": 0.0,
+    "ndcg": 0.0,
+    "abstained": false
+   },
+   {
+    "id": "q10",
+    "lang": "en",
+    "retrieval_query": "How does tomato mosaic virus infect plants?",
+    "retrieved": [
+     [
+      "Tomato yellow leaf curl virus (Wikipedia)",
+      "Tomato yellow leaf curl virus"
+     ],
+     [
+      "Bacterial leaf spot of peppers and tomato (Wikipedia)",
+      "Disease cycle"
+     ],
+     [
+      "Tomato mosaic virus (Wikipedia)",
+      "Tomato mosaic virus"
+     ],
+     [
+      "Bacterial leaf spot of peppers and tomato (Wikipedia)",
+      "Management"
+     ],
+     [
+      "Tomato mosaic virus (Wikipedia)",
+      "Host plants"
+     ]
+    ],
+    "hit": 0.0,
+    "recall": 0.0,
+    "precision": 0.0,
+    "mrr": 0.0,
+    "ndcg": 0.0,
+    "abstained": false
+   },
+   {
+    "id": "q11",
+    "lang": "en",
+    "retrieval_query": "Describe the life cycle of the two-spotted spider mite.",
+    "retrieved": [
+     [
+      "Tetranychus urticae (Wikipedia)",
+      "Tetranychus urticae"
+     ],
+     [
+      "Tetranychus urticae (Wikipedia)",
+      "Ecology"
+     ],
+     [
+      "Phytophthora infestans (Wikipedia)",
+      "Life cycle, signs and symptoms"
+     ],
+     [
+      "Alternaria solani (Wikipedia)",
+      "Disease cycle"
+     ],
+     [
+      "Tetranychus urticae (Wikipedia)",
+      "Ecology"
+     ]
+    ],
+    "hit": 0.0,
+    "recall": 0.0,
+    "precision": 0.0,
+    "mrr": 0.0,
+    "ndcg": 0.0,
+    "abstained": false
+   },
+   {
+    "id": "q12",
+    "lang": "en",
+    "retrieval_query": "How can cotton bollworm (Helicoverpa armigera) be monitored and controlled?",
+    "retrieved": [
+     [
+      "Integrated pest management (Wikipedia)",
+      "United States (History)"
+     ],
+     [
+      "Integrated pest management (Wikipedia)",
+      "United States (History)"
+     ],
+     [
+      "Helicoverpa armigera (Wikipedia)",
+      "Helicoverpa armigera"
+     ],
+     [
+      "Integrated Pest Management (IPM) Principles",
+      "How do IPM programs work?"
+     ],
+     [
+      "Integrated pest management (Wikipedia)",
+      "Monitoring"
+     ]
+    ],
+    "hit": 0.0,
+    "recall": 0.0,
+    "precision": 0.0,
+    "mrr": 0.0,
+    "ndcg": 0.0,
+    "abstained": false
+   },
+   {
+    "id": "q13",
+    "lang": "en",
+    "retrieval_query": "What are the steps of integrated pest management?",
+    "retrieved": [
+     [
+      "Integrated pest management (Wikipedia)",
+      "Integrated pest management"
+     ],
+     [
+      "Integrated pest management (Wikipedia)",
+      "Residential pest management"
+     ],
+     [
+      "Integrated pest management (Wikipedia)",
+      "Agricultural pest management"
+     ],
+     [
+      "Integrated pest management (Wikipedia)",
+      "Books"
+     ],
+     [
+      "Integrated pest management (Wikipedia)",
+      "Agricultural pest management"
+     ]
+    ],
+    "hit": 0.0,
+    "recall": 0.0,
+    "precision": 0.0,
+    "mrr": 0.0,
+    "ndcg": 0.0,
+    "abstained": false
+   },
+   {
+    "id": "q14",
+    "lang": "en",
+    "retrieval_query": "What is an action threshold in IPM?",
+    "retrieved": [
+     [
+      "Integrated Pest Management (IPM) Principles",
+      "How do IPM programs work?"
+     ],
+     [
+      "Integrated pest management (Wikipedia)",
+      "Agricultural pest management"
+     ],
+     [
+      "Integrated pest management (Wikipedia)",
+      "Monitoring"
+     ],
+     [
+      "Integrated pest management (Wikipedia)",
+      "Agricultural pest management"
+     ],
+     [
+      "Integrated Pest Management (IPM) Principles",
+      "How do IPM programs work?"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 0.6666666666666666,
+    "precision": 0.6,
+    "mrr": 1.0,
+    "ndcg": 0.8854598815714874,
+    "abstained": false
+   },
+   {
+    "id": "q15",
+    "lang": "en",
+    "retrieval_query": "How does irrigation cause soil salinity?",
+    "retrieved": [
+     [
+      "Soil salinity (Wikipedia)",
+      "Consequences of soil salinity"
+     ],
+     [
+      "Soil salinity (Wikipedia)",
+      "Salt tolerance of crops"
+     ],
+     [
+      "Soil salinity (Wikipedia)",
+      "Natural occurrence"
+     ],
+     [
+      "Soil salinity (Wikipedia)",
+      "Salinity due to irrigation"
+     ],
+     [
+      "Evapotranspiration (Wikipedia)",
+      "Soil and irrigation"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 0.5,
+    "precision": 0.2,
+    "mrr": 0.25,
+    "ndcg": 0.2640681225725909,
+    "abstained": false
+   },
+   {
+    "id": "q16",
+    "lang": "en",
+    "retrieval_query": "What are the effects of salinity on crops?",
+    "retrieved": [
+     [
+      "Soil salinity (Wikipedia)",
+      "Salt tolerance of crops"
+     ],
+     [
+      "Soil salinity (Wikipedia)",
+      "Consequences of soil salinity"
+     ],
+     [
+      "Soil salinity (Wikipedia)",
+      "Salinity due to irrigation"
+     ],
+     [
+      "Crop rotation (Wikipedia)",
+      "Crop choice"
+     ],
+     [
+      "Soil salinity (Wikipedia)",
+      "Soil salinity"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 1.0,
+    "precision": 0.4,
+    "mrr": 1.0,
+    "ndcg": 1.0,
+    "abstained": false
+   },
+   {
+    "id": "q17",
+    "lang": "en",
+    "retrieval_query": "How can the pH of an acidic soil be increased?",
+    "retrieved": [
+     [
+      "Soil pH (Wikipedia)",
+      "Increasing pH of acidic soil"
+     ],
+     [
+      "Soil pH (Wikipedia)",
+      "Soil pH"
+     ],
+     [
+      "Soil pH (Wikipedia)",
+      "Increasing pH of acidic soil"
+     ],
+     [
+      "Soil pH (Wikipedia)",
+      "Sources of alkalinity"
+     ],
+     [
+      "Soil pH (Wikipedia)",
+      "pH effects on soil biota"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 1.0,
+    "precision": 0.4,
+    "mrr": 1.0,
+    "ndcg": 1.5,
+    "abstained": false
+   },
+   {
+    "id": "q18",
+    "lang": "en",
+    "retrieval_query": "How does soil pH affect nutrient availability?",
+    "retrieved": [
+     [
+      "Soil pH (Wikipedia)",
+      "pH effects on soil biota"
+     ],
+     [
+      "Soil pH (Wikipedia)",
+      "Soil pH"
+     ],
+     [
+      "Soil pH (Wikipedia)",
+      "Water availability in relation to soil pH"
+     ],
+     [
+      "Soil pH (Wikipedia)",
+      "Plant pH preferences"
+     ],
+     [
+      "Soil pH (Wikipedia)",
+      "Increasing pH of acidic soil"
+     ]
+    ],
+    "hit": 0.0,
+    "recall": 0.0,
+    "precision": 0.0,
+    "mrr": 0.0,
+    "ndcg": 0.0,
+    "abstained": false
+   },
+   {
+    "id": "q19",
+    "lang": "en",
+    "retrieval_query": "What are the advantages and disadvantages of drip irrigation?",
+    "retrieved": [
+     [
+      "Drip irrigation (Wikipedia)",
+      "Advantages and disadvantages"
+     ],
+     [
+      "Drip irrigation (Wikipedia)",
+      "Advantages and disadvantages"
+     ],
+     [
+      "Drip irrigation (Wikipedia)",
+      "Advantages and disadvantages"
+     ],
+     [
+      "Drip irrigation (Wikipedia)",
+      "Drip irrigation"
+     ],
+     [
+      "Drip irrigation (Wikipedia)",
+      "Advantages and disadvantages"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 1.0,
+    "precision": 0.8,
+    "mrr": 1.0,
+    "ndcg": 2.5177825608059994,
+    "abstained": false
+   },
+   {
+    "id": "q20",
+    "lang": "en",
+    "retrieval_query": "What is furrow irrigation?",
+    "retrieved": [
+     [
+      "Surface irrigation (Wikipedia)",
+      "Furrow irrigation"
+     ],
+     [
+      "Drip irrigation (Wikipedia)",
+      "Drip irrigation"
+     ],
+     [
+      "Surface irrigation (Wikipedia)",
+      "Furrow irrigation"
+     ],
+     [
+      "Surface irrigation (Wikipedia)",
+      "Surge irrigation"
+     ],
+     [
+      "Surface irrigation (Wikipedia)",
+      "Surface irrigation"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 1.0,
+    "precision": 0.4,
+    "mrr": 1.0,
+    "ndcg": 1.5,
+    "abstained": false
+   },
+   {
+    "id": "q21",
+    "lang": "en",
+    "retrieval_query": "Which factors control evapotranspiration?",
+    "retrieved": [
+     [
+      "Evapotranspiration (Wikipedia)",
+      "Primary factors"
+     ],
+     [
+      "Evapotranspiration (Wikipedia)",
+      "Soil and irrigation"
+     ],
+     [
+      "Evapotranspiration (Wikipedia)",
+      "Definition"
+     ],
+     [
+      "Evapotranspiration (Wikipedia)",
+      "Vegetation coverage"
+     ],
+     [
+      "Evapotranspiration (Wikipedia)",
+      "Vegetation type"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 1.0,
+    "precision": 0.6,
+    "mrr": 1.0,
+    "ndcg": 0.9469024295259745,
+    "abstained": false
+   },
+   {
+    "id": "q22",
+    "lang": "en",
+    "retrieval_query": "How does crop rotation help control pests and diseases?",
+    "retrieved": [
+     [
+      "Crop rotation (Wikipedia)",
+      "Pathogen and pest control"
+     ],
+     [
+      "Crop rotation (Wikipedia)",
+      "Crop rotation"
+     ],
+     [
+      "Crop rotation (Wikipedia)",
+      "Weed management"
+     ],
+     [
+      "Crop rotation (Wikipedia)",
+      "Organic farming"
+     ],
+     [
+      "Crop rotation (Wikipedia)",
+      "Planning a rotation"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 1.0,
+    "precision": 0.2,
+    "mrr": 1.0,
+    "ndcg": 1.0,
+    "abstained": false
+   },
+   {
+    "id": "q23",
+    "lang": "en",
+    "retrieval_query": "How is wheat leaf rust controlled?",
+    "retrieved": [
+     [
+      "Wheat leaf rust (Wikipedia)",
+      "Wheat leaf rust"
+     ],
+     [
+      "Wheat leaf rust (Wikipedia)",
+      "Nomenclatural history"
+     ],
+     [
+      "Wheat leaf rust (Wikipedia)",
+      "Host resistance"
+     ],
+     [
+      "Wheat leaf rust (Wikipedia)",
+      "Epidemiology"
+     ],
+     [
+      "Wheat leaf rust (Wikipedia)",
+      "Nomenclatural history"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 0.3333333333333333,
+    "precision": 0.2,
+    "mrr": 0.3333333333333333,
+    "ndcg": 0.23463936301137822,
+    "abstained": false
+   },
+   {
+    "id": "q24",
+    "lang": "ur",
+    "retrieval_query": "ٹماٹر کے پتوں پر اگیتی جھلسا (ارلی بلائٹ) کی علامات کیا ہیں؟ tomato leaves blight",
+    "retrieved": [
+     [
+      "Alternaria solani (Wikipedia)",
+      "Alternaria solani"
+     ],
+     [
+      "Alternaria solani (Wikipedia)",
+      "On tomatoes"
+     ],
+     [
+      "Bacterial leaf spot of peppers and tomato (Wikipedia)",
+      "Leaves and stems"
+     ],
+     [
+      "Septoria lycopersici (Wikipedia)",
+      "Host and symptoms"
+     ],
+     [
+      "Corynespora cassiicola (Wikipedia)",
+      "Environment"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 0.6666666666666666,
+    "precision": 0.4,
+    "mrr": 1.0,
+    "ndcg": 0.7653606369886217,
+    "abstained": false
+   },
+   {
+    "id": "q25",
+    "lang": "ur",
+    "retrieval_query": "زمین میں نمکیات (کلر) آبپاشی سے کیسے بڑھتے ہیں؟ soil land salinity saline soil irrigation",
+    "retrieved": [
+     [
+      "Soil salinity (Wikipedia)",
+      "Salt tolerance of crops"
+     ],
+     [
+      "Soil salinity (Wikipedia)",
+      "Consequences of soil salinity"
+     ],
+     [
+      "Soil salinity (Wikipedia)",
+      "Natural occurrence"
+     ],
+     [
+      "Soil salinity (Wikipedia)",
+      "Soil salinity"
+     ],
+     [
+      "Soil salinity (Wikipedia)",
+      "Salinity due to irrigation"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 0.6666666666666666,
+    "precision": 0.4,
+    "mrr": 0.25,
+    "ndcg": 0.38364913903790027,
+    "abstained": false
+   },
+   {
+    "id": "q26",
+    "lang": "ur-Latn",
+    "retrieval_query": "drip abpashi ke fayde aur nuqsanat kya hain irrigation",
+    "retrieved": [
+     [
+      "Drip irrigation (Wikipedia)",
+      "Drip irrigation"
+     ],
+     [
+      "Surface irrigation (Wikipedia)",
+      "Surge irrigation"
+     ],
+     [
+      "Drip irrigation (Wikipedia)",
+      "Plastic emitter, trickle irrigation"
+     ],
+     [
+      "Drip irrigation (Wikipedia)",
+      "Uses"
+     ],
+     [
+      "Drip irrigation (Wikipedia)",
+      "Plastic emitter, trickle irrigation"
+     ]
+    ],
+    "hit": 0.0,
+    "recall": 0.0,
+    "precision": 0.0,
+    "mrr": 0.0,
+    "ndcg": 0.0,
+    "abstained": false
+   },
+   {
+    "id": "q27",
+    "lang": "ur-Latn",
+    "retrieval_query": "gandum ki fasal mein rust bimari ko kaise control karein wheat crop disease",
+    "retrieved": [
+     [
+      "Wheat leaf rust (Wikipedia)",
+      "Wheat leaf rust"
+     ],
+     [
+      "Wheat leaf rust (Wikipedia)",
+      "Host resistance"
+     ],
+     [
+      "Crop rotation (Wikipedia)",
+      "Weed management"
+     ],
+     [
+      "Wheat leaf rust (Wikipedia)",
+      "Epidemiology"
+     ],
+     [
+      "Crop rotation (Wikipedia)",
+      "Pathogen and pest control"
+     ]
+    ],
+    "hit": 1.0,
+    "recall": 0.3333333333333333,
+    "precision": 0.2,
+    "mrr": 0.5,
+    "ndcg": 0.2960819109658652,
+    "abstained": false
+   },
+   {
+    "id": "n01",
+    "lang": "en",
+    "retrieval_query": "What is the current export price of Pakistani mangoes?",
+    "retrieved": [],
+    "correct_abstention": true
+   },
+   {
+    "id": "n02",
+    "lang": "en",
+    "retrieval_query": "How much milk does a Sahiwal cow produce per day?",
+    "retrieved": [],
+    "correct_abstention": true
+   },
+   {
+    "id": "n03",
+    "lang": "en",
+    "retrieval_query": "Which bank gives the cheapest tractor loan in Punjab?",
+    "retrieved": [],
+    "correct_abstention": true
+   },
+   {
+    "id": "n04",
+    "lang": "en",
+    "retrieval_query": "When should rice be transplanted in Sindh?",
+    "retrieved": [
+     [
+      "Integrated pest management (Wikipedia)",
+      "Southeast Asia"
+     ]
+    ],
+    "correct_abstention": false
+   },
+   {
+    "id": "n05",
+    "lang": "en",
+    "retrieval_query": "What is the government support price of sugarcane this year?",
+    "retrieved": [],
+    "correct_abstention": true
+   },
+   {
+    "id": "n06",
+    "lang": "ur",
+    "retrieval_query": "مرغیوں کو کون سی ویکسین کب لگانی چاہیے؟",
+    "retrieved": [],
+    "correct_abstention": true
+   }
+  ]
+ }
+}

@@ -1,0 +1,100 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+
+/*
+ * Design tokens. Source: docs/03-architecture/DESIGN.md section 2.
+ * Phase 2 adjustment (documented in DESIGN_NAVIGATION_NOTES.md): surfaces and borders
+ * moved from a green-grey to a warm neutral; brand greens unchanged.
+ * Contrast (WCAG 2 formula, computed): muted on surface 5.22:1, muted on white 5.64:1,
+ * white on primary 5.37:1, warning on warning-soft 5.41:1 (DESIGN.md's #B7791F was 3.38:1,
+ * below AA, so it was darkened). Accent gold on white is 2.42:1: decoration only, never text.
+ */
+@theme {
+  --font-sans: "Inter Variable", "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, sans-serif;
+
+  --color-primary: #1f7a3e;
+  --color-primary-dark: #14532d;
+  --color-primary-deep: #0f3d22;
+  --color-primary-soft: #eaf3ec;
+  --color-accent: #c9a227;
+  --color-accent-soft: #f8f1dc;
+  --color-ink: #0f1a14;
+  --color-ink-soft: #2b3830;
+  --color-muted: #5b6b61;
+  --color-surface: #f7f6f2;
+  --color-surface-raised: #fbfaf7;
+  --color-card: #ffffff;
+  --color-border: #e6e3dc;
+  --color-border-strong: #d4d0c6;
+  --color-success: #1f7a3e;
+  --color-warning: #8a5a12;
+  --color-warning-soft: #fdf4e3;
+  --color-danger: #b42318;
+  --color-danger-soft: #fdeceb;
+  --color-info: #1d5fa8;
+  --color-info-soft: #eaf1fa;
+
+  --radius-card: 14px;
+  --radius-input: 10px;
+
+  --shadow-card: 0 1px 2px rgb(15 26 20 / 0.04), 0 1px 1px rgb(15 26 20 / 0.02);
+  --shadow-overlay: 0 12px 32px -8px rgb(15 26 20 / 0.18), 0 2px 6px rgb(15 26 20 / 0.06);
+
+  --animate-fade-in: fade-in 160ms ease-out;
+  --animate-dialog-in: dialog-in 180ms ease-out;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes dialog-in {
+    from {
+      opacity: 0;
+      transform: translate(-50%, calc(-50% + 8px));
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    font-feature-settings: "cv11", "ss01";
+  }
+  body {
+    @apply bg-surface text-ink font-sans antialiased;
+    font-size: 16px;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+  /*
+   * Grid items default to min-width:auto, so one long unbroken name (e.g. a farm called
+   * "Chak-212-...") widened whole layouts past a phone screen (found by the e2e overflow
+   * test). Zero-specificity :where() keeps any utility class able to override this.
+   */
+  :where(.grid) > * {
+    min-width: 0;
+  }
+  /* Numbers line up in tables and stat tiles. */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

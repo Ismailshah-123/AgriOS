@@ -1,0 +1,49 @@
+# AgriOS local infrastructure. Passwords come ONLY from a git-ignored `.env`
+# next to this file (see .env.example). Nothing secret is written here.
+#
+#   docker compose up -d db                   # development database (persistent volume)
+#   docker compose --profile test up -d db_test   # disposable test database (tmpfs)
+#
+# Host ports default to 5433/5434 so they never clash with a locally installed
+# PostgreSQL on 5432.
+
+name: agrios
+
+services:
+  db:
+    image: pgvector/pgvector:0.8.0-pg17
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-agrios}
+      POSTGRES_USER: ${POSTGRES_USER:-agrios}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-5433}:5432"
+    volumes:
+      - agrios_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  db_test:
+    image: pgvector/pgvector:0.8.0-pg17
+    profiles: ["test"]
+    environment:
+      POSTGRES_DB: agrios_test
+      POSTGRES_USER: agrios_test
+      POSTGRES_PASSWORD: ${POSTGRES_TEST_PASSWORD:?Set POSTGRES_TEST_PASSWORD in .env}
+    ports:
+      - "127.0.0.1:${POSTGRES_TEST_PORT:-5434}:5432"
+    # Disposable: data lives in memory and disappears when the container stops.
+    tmpfs:
+      - /var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U agrios_test -d agrios_test"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  agrios_pgdata:

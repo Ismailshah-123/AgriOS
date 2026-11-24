@@ -1,0 +1,42 @@
+{
+  "version": "tomato_v1",
+  "crop": "tomato",
+  "description": "Canonical tomato class map over agri_foundation_v1 labels. Source labels are kept in the manifest; this file only maps them.",
+  "classes": [
+    "bacterial_spot",
+    "early_blight",
+    "healthy",
+    "late_blight",
+    "leaf_mold",
+    "mosaic_virus",
+    "septoria_leaf_spot",
+    "spider_mites",
+    "target_spot",
+    "yellow_leaf_curl_virus"
+  ],
+  "label_map": {
+    "tomato_bacterial_spot": "bacterial_spot",
+    "tomato_early_blight": "early_blight",
+    "tomato_healthy": "healthy",
+    "tomato_late_blight": "late_blight",
+    "tomato_mold": "leaf_mold",
+    "tomato_mosaic_virus": "mosaic_virus",
+    "tomato_septoria_spot": "septoria_leaf_spot",
+    "tomato_spider_mites_two-spotted_spider_mite": "spider_mites",
+    "tomato_spider_mites_two_spotted_spider_mite": "spider_mites",
+    "tomato_two_spotted_spider_mites": "spider_mites",
+    "tomato_target_spot": "target_spot",
+    "tomato_yellow_curl_virus": "yellow_leaf_curl_virus",
+    "tomato_yellow_virus": "yellow_leaf_curl_virus"
+  },
+  "excluded_labels": {
+    "tomato_black_spot": "Single-source class (tomatoleaf only, 108 images): label is confounded with source; kept on disk for future work."
+  },
+  "merge_notes": {
+    "spider_mites": "Three spellings of the same pest label from PlantVillage, New Plant Diseases and PlantDoc.",
+    "yellow_leaf_curl_virus": "PlantDoc 'Tomato leaf yellow virus' is TYLCV; merged with PlantVillage 'Tomato Yellow Leaf Curl Virus'."
+  },
+  "internal_sources": ["plantvillage", "new_plant_diseases", "tomatoleaf", "plantseg"],
+  "external_sources": ["plantdoc", "plantwild"],
+  "external_note": "PlantDoc and PlantWild are in-the-wild photos held out entirely for external evaluation; never used for training, validation, calibration or threshold selection."
+}

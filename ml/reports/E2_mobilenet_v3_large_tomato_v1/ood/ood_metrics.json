@@ -1,0 +1,29 @@
+{
+  "unknown_set": "3000 non-tomato images (seed 7), crops never seen in training",
+  "in_distribution": "4011 tomato test images",
+  "energy_auroc": 0.98183852738303,
+  "ood_threshold": -6.6582,
+  "conf_threshold": 0.47,
+  "in_dist_flagged_out_of_scope_rate": 0.04612316130640738,
+  "unknown_flagged_out_of_scope_rate": 0.925,
+  "unknown_not_accepted_rate": 0.925,
+  "unknown_not_accepted_by_crop": {
+    "apple": 0.9003,
+    "blueberry": 0.9589,
+    "cassava": 0.9862,
+    "cherry": 0.9921,
+    "corn": 0.9788,
+    "grape": 0.8421,
+    "orange": 0.8519,
+    "peach": 0.958,
+    "pepper": 0.8836,
+    "potato": 0.6634,
+    "raspberry": 1.0,
+    "soybean": 0.7912,
+    "squash": 0.9839,
+    "strawberry": 0.9565,
+    "unknown": 0.981,
+    "wheat": 0.9766
+  },
+  "limitation": "Only other-crop leaf images were tested; non-plant images are not evaluated."
+}

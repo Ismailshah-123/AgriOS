@@ -1,0 +1,101 @@
+# Render Blueprint for the AgriOS demo deployment (free plan). Apply once from the Render
+# dashboard: New > Blueprint > select this GitHub repository. Full guide, limits and the
+# post-deploy checklist: docs/12-deployment/RENDER_DEPLOYMENT.md
+#
+# Topology: the browser only talks to agrios-web. agrios-web serves the built SPA and proxies
+# /api/* to agrios-api (rewrite rule), so the SameSite=Strict refresh cookie stays first-party.
+# If Render gives a service a different subdomain (name already taken), update the rewrite
+# destination below and ALLOWED_ORIGINS on agrios-api to the real URLs.
+
+databases:
+  - name: agrios-db
+    plan: free
+    region: singapore
+    databaseName: agrios
+    user: agrios
+    postgresMajorVersion: "15"
+    ipAllowList: [] # internal connections only (no public database access)
+
+services:
+  - type: web
+    name: agrios-api
+    runtime: python
+    plan: free
+    region: singapore
+    rootDir: backend
+    buildCommand: pip install "uv>=0.5,<1" && uv sync --frozen --no-dev
+    # Migrations are additive and idempotent (scripts/init_db.py). fetch_model.py installs the
+    # packaged model only when MODEL_PACKAGE_URL/SHA256 are set; otherwise Crop Doctor reports
+    # model_unavailable honestly. A failed fetch never blocks the API from starting.
+    startCommand: >-
+      .venv/bin/python scripts/init_db.py &&
+      { .venv/bin/python scripts/fetch_model.py || echo "fetch_model failed: Crop Doctor stays model_unavailable"; } &&
+      exec .venv/bin/uvicorn app.main:app --host 0.0.0.0 --port $PORT --proxy-headers --forwarded-allow-ips "*"
+    healthCheckPath: /api/v1/health
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      - key: UV_PYTHON_PREFERENCE
+        value: only-system
+      - key: UV_LINK_MODE
+        value: copy
+      - key: APP_ENV
+        value: production
+      - key: LOG_LEVEL
+        value: INFO
+      - key: DATABASE_URL
+        fromDatabase:
+          name: agrios-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: ALLOWED_ORIGINS
+        value: https://agrios-web.onrender.com
+      - key: EMBEDDED_WORKER # free plan has no background workers: run jobs in the API process
+        value: "true"
+      - key: API_DOCS_ENABLED # demo: expose /api/v1/docs; set "false" to hide
+        value: "true"
+      - key: EMBEDDING_PROVIDER # 512 MB instance: lexical retrieval only (no local embeddings)
+        value: none
+      - key: LLM_PROVIDER # "none" = extractive cited answers; "groq" needs GROQ_API_KEY
+        value: none
+      - key: GROQ_API_KEY
+        sync: false
+      - key: MODEL_PACKAGE_URL
+        sync: false
+      - key: MODEL_PACKAGE_SHA256
+        sync: false
+
+  - type: web
+    name: agrios-web
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 24.11.1
+    routes:
+      - type: rewrite
+        source: /api/*
+        destination: https://agrios-api.onrender.com/api/*
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable

@@ -1,0 +1,46 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Backend: API (debug)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "app.main:app",
+        "--port",
+        "8000"
+      ],
+      "cwd": "${workspaceFolder}/backend",
+      "justMyCode": true,
+      "python": "${workspaceFolder}/backend/.venv/Scripts/python.exe"
+    },
+    {
+      "name": "Backend: worker (debug)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "app.jobs.worker",
+      "cwd": "${workspaceFolder}/backend",
+      "python": "${workspaceFolder}/backend/.venv/Scripts/python.exe"
+    },
+    {
+      "name": "Backend: current test file",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": [
+        "${file}",
+        "-x"
+      ],
+      "cwd": "${workspaceFolder}/backend",
+      "python": "${workspaceFolder}/backend/.venv/Scripts/python.exe"
+    },
+    {
+      "name": "Frontend: Edge (needs dev server)",
+      "type": "msedge",
+      "request": "launch",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/frontend/src"
+    }
+  ]
+}

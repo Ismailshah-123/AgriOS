@@ -1,0 +1,80 @@
+{
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/.ruff_cache": true,
+    "**/node_modules": true,
+    "**/.venv": true,
+    "frontend/dist": true,
+    "frontend/test-results": true,
+    "backend/var": true,
+    "backend/.coverage": true,
+    "**/*.tsbuildinfo": true
+  },
+  "search.exclude": {
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/.ruff_cache": true,
+    "**/node_modules": true,
+    "**/.venv": true,
+    "frontend/dist": true,
+    "frontend/test-results": true,
+    "backend/var": true,
+    "backend/.coverage": true,
+    "**/*.tsbuildinfo": true,
+    "backup": true,
+    "_cleanup_review": true,
+    "ml/data": true,
+    "ml/models": true,
+    "**/*.lock": true,
+    "frontend/package-lock.json": true
+  },
+  "files.watcherExclude": {
+    "**/.venv/**": true,
+    "**/node_modules/**": true,
+    "backend/var/**": true,
+    "ml/data/**": true,
+    "ml/models/**": true,
+    "backup/**": true,
+    "_cleanup_review/**": true
+  },
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "python.defaultInterpreterPath": "${workspaceFolder}/backend/.venv/Scripts/python.exe",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/backend"
+  ],
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+  "python.testing.cwd": "${workspaceFolder}/backend",
+  "python.testing.pytestArgs": [
+    "tests"
+  ],
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports.ruff": "explicit",
+      "source.fixAll.ruff": "explicit"
+    },
+    "editor.rulers": [
+      100
+    ]
+  },
+  "ruff.nativeServer": "on",
+  "eslint.workingDirectories": [
+    "frontend"
+  ],
+  "[typescript][typescriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    "editor.tabSize": 2
+  },
+  "typescript.tsdk": "frontend/node_modules/typescript/lib",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "tailwindCSS.experimental.configFile": "frontend/src/styles/globals.css",
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.cwd": "${workspaceFolder}"
+}

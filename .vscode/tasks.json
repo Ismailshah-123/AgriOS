@@ -1,0 +1,170 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "AgriOS: Start (backend + worker + frontend)",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/scripts/dev/start.ps1"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "AgriOS: Stop",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/scripts/dev/stop.ps1"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "AgriOS: Status",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/scripts/dev/status.ps1"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "AgriOS: Check environment",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/scripts/dev/check-environment.ps1"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "AgriOS: Initialise database (safe, repeatable)",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/scripts/dev/init-database.ps1"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Backend: Run migrations (alembic upgrade head)",
+      "type": "shell",
+      "command": "uv run alembic upgrade head",
+      "options": {
+        "cwd": "${workspaceFolder}/backend"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Backend: Start API (reload)",
+      "type": "shell",
+      "command": "uv run uvicorn app.main:app --reload --port 8000",
+      "options": {
+        "cwd": "${workspaceFolder}/backend"
+      },
+      "problemMatcher": [],
+      "isBackground": true
+    },
+    {
+      "label": "Backend: Start worker",
+      "type": "shell",
+      "command": "uv run python -m app.jobs.worker",
+      "options": {
+        "cwd": "${workspaceFolder}/backend"
+      },
+      "problemMatcher": [],
+      "isBackground": true
+    },
+    {
+      "label": "Backend: Tests (isolated test DB)",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/scripts/dev/test-backend.ps1"
+      ],
+      "problemMatcher": [],
+      "group": "test"
+    },
+    {
+      "label": "Backend: Lint + format check",
+      "type": "shell",
+      "command": "uv run ruff check . ; if ($?) { uv run ruff format --check . }",
+      "options": {
+        "cwd": "${workspaceFolder}/backend"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Frontend: Start dev server",
+      "type": "shell",
+      "command": "npm run dev",
+      "options": {
+        "cwd": "${workspaceFolder}/frontend"
+      },
+      "problemMatcher": [],
+      "isBackground": true
+    },
+    {
+      "label": "Frontend: Tests",
+      "type": "shell",
+      "command": "npm test -- --run",
+      "options": {
+        "cwd": "${workspaceFolder}/frontend"
+      },
+      "problemMatcher": [],
+      "group": "test"
+    },
+    {
+      "label": "Frontend: Lint + typecheck",
+      "type": "shell",
+      "command": "npm run lint ; if ($?) { npx tsc -b }",
+      "options": {
+        "cwd": "${workspaceFolder}/frontend"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Frontend: Production build",
+      "type": "shell",
+      "command": "npm run build",
+      "options": {
+        "cwd": "${workspaceFolder}/frontend"
+      },
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "Frontend: Browser tests (Playwright, Edge)",
+      "type": "shell",
+      "command": "npx playwright test",
+      "options": {
+        "cwd": "${workspaceFolder}/frontend"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+dist/
+build/
+coverage/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+*.log
+*.sqlite3
+*.db
+.DS_Store
+Thumbs.db
+
+# Large datasets and model artifacts
+ml/data/raw/
+ml/data/external/
+ml/data/processed/
+ml/models/**/*.pt
+ml/models/**/*.pth
+ml/models/**/*.onnx
+ml/registry/
+*.h5
+*.hdf5
+
+# Local runtime storage (uploads, installed models)
+var/
+backend/var/
+
+# TypeScript incremental build info
+*.tsbuildinfo
+
+# Local backups and quarantine (kept on disk, never committed)
+backup/
+_cleanup_review/
+
+# Datasets and data archives
+data/
+datasets/
+ml/data/
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.npy
+*.npz
+*.parquet
+
+# Model weights, checkpoints and serialized estimators
+ml/models/
+ml/reports/**/checkpoints/
+*.safetensors
+*.ckpt
+*.bin
+*.pkl
+*.pickle
+*.joblib
+*.tflite
+
+# Experiment tracking caches
+mlruns/
+wandb/
+
+# Local tool settings that may hold personal paths or tokens
+.claude/settings.local.json
+*.pem
+*.key
+
+# Playwright artifacts (screenshots, traces)
+test-results/
+playwright-report/
+
+# Coverage data
+.coverage
+.coverage.*
+htmlcov/
+
+# ML local caches and run outputs (runs/ is a junction to D:)
+ml/cache/
+ml/runs/
+ml/.venv/
