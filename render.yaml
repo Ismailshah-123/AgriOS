@@ -36,8 +36,6 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: 3.12.8
-      - key: UV_PYTHON_PREFERENCE
-        value: only-system
       - key: UV_LINK_MODE
         value: copy
       - key: APP_ENV
