@@ -52,11 +52,14 @@ Conversation so far:
 
 Latest question: {question}"""
 
+_AREA = r"(?:acres?|ha|hectares?|kanals?|litres?|liters?|l\b|gallons?|tanks?|plants?|trees?|100)"
 DOSE = re.compile(
     r"\b\d+(?:[.,]\d+)?\s*(?:-|to|–)?\s*\d*(?:[.,]\d+)?\s*"
     r"(?:kg|kgs|kilograms?|g|gm|grams?|mg|ml|l|litres?|liters?|lbs?|pounds?|oz|bags?|ppm|%)"
-    r"\s*(?:/|per|an?\s|each\s)\s*"
-    r"(?:acres?|ha|hectares?|kanals?|litres?|liters?|l\b|gallons?|tanks?|plants?|100)",
+    # "kg/ha", "kg per acre", and with up to two words between ("2.4 kg copper per acre")
+    rf"(?:\s*(?:/|per\s|an?\s|each\s)\s*{_AREA}|\s+(?:\w+\s+){{1,2}}(?:/|per\s|an?\s)\s*{_AREA}"
+    # scientific notation: "6 kg ha⁻¹", "2.4 kg acre-1"
+    r"|\s*(?:ha|hectares?|acres?|kanals?)\s*(?:⁻¹|-1|−1|\^-1))",
     re.IGNORECASE,
 )
 DOSE_NOTE = (

@@ -157,3 +157,18 @@ def test_dose_requests_and_quoted_rates() -> None:
     assert not query.analyse("How does copper affect late blight?").dose_request
     t, changed = generation.redact_doses("limit is 6 kilograms per hectare (5.4 lb/acre)/year")
     assert changed and "6 kilograms" not in t and "5.4 lb/acre" not in t
+
+
+def test_dose_redaction_covers_notation_and_words_between() -> None:
+    # Real LLM output from a 2026-11-25 demo run that slipped through the earlier pattern.
+    text = (
+        "The organic standard limits copper applications to about 6 kg ha⁻¹ per "
+        "year, which is roughly 2.4 kg acre⁻¹ per year [S1].\n"
+        "- Do not exceed the total annual limit of ≈ 2.4 kg copper per acre."
+    )
+    t, changed = generation.redact_doses(text)
+    assert changed
+    assert "6 kg" not in t and "2.4" not in t
+    assert "[S1]" in t  # citations survive
+    assert generation.redact_doses("apply 2 kg of product per acre")[0].count("[rate removed]") == 1
+    assert generation.redact_doses("yields rose by 12 % in two seasons")[1] is False
