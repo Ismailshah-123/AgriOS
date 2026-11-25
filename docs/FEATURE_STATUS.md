@@ -9,7 +9,7 @@ Summary: the single list CLAUDE.md rule 12 points to. Labels: Proposed | Impleme
 | DB engine from injected settings; 503 `database_unavailable` | Implemented | tests/api/test_database_errors.py, test_health.py (2026-11-22) |
 | Isolated test-database harness (name must contain "test", rollback per test) | Implemented | tests/db/test_harness.py (2026-11-22) |
 | Docker Compose (db, db_test) | Implemented (config validated; not yet run: Docker not installed on dev machine) | `docker compose config` |
-| CI workflow (GitHub Actions) | Implemented (not yet run: no remote) | .github/workflows/ci.yml |
+| CI workflow (GitHub Actions): backend ruff + format + pytest on Postgres service, frontend lint + tsc + vitest + build | Implemented (first run green 2026-11-25) | .github/workflows/ci.yml, github.com/Ismailshah-123/AgriOS/actions/runs/45512362174 |
 | Hosted demo on Render (Blueprint: Postgres + API with embedded worker + static site proxying /api; migrations on start; optional checksum-verified model fetch) | Proposed (configuration prepared 2026-11-25; not applied — needs the owner's Render login) | render.yaml, docs/12-deployment/RENDER_DEPLOYMENT.md, backend/app/mlops/package_fetch.py + tests/unit/test_model_package_fetch.py |
 | Auth: register/login, Argon2id, 15-min JWT, rotating refresh cookie with reuse detection, logout, profile, password change, login rate limit | Implemented | tests/db/test_auth_api.py, tests/unit/test_security.py (2026-11-22) |
 | Roles farmer/expert/admin + `require_roles` (public signup = farmer only) | Implemented | test_require_roles_blocks_farmer, self-assigned-role test |
